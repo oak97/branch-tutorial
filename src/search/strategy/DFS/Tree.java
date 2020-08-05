@@ -24,6 +24,7 @@ public class Tree {
         //队列
         stack = new Stack<Node>();
         stack.push(node);
+        System.out.println("入栈：" + node.id);
     }
 
     public int[] solve() {
@@ -54,8 +55,10 @@ public class Tree {
             if (bc.branch(node)) {
                 System.out.println("分支：左右节点分别为 " + bc.left_node + "，" + bc.right_node);
                 branch_cnt++;
-                stack.push(bc.left_node);
                 stack.push(bc.right_node);
+                stack.push(bc.left_node);
+                System.out.println("入栈：" + bc.right_node.id);
+                System.out.println("入栈：" + bc.left_node.id);
             } else {
                 System.out.println("无法分支");
             }

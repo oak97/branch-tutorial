@@ -15,8 +15,8 @@ public class Instance {
         nodes[0] = new Node(0, 11.6, 7.2, 153.2);
         nodes[1] = new Node(1, 11, 7.5, 152);
         nodes[2] = new Node(2, 12, 6, 144);
-        nodes[3] = new Node(3, 10, 8, 150);
-        nodes[4] = new Node(4, 11, 7, 147);
+        nodes[3] = new Node(3, 11, 7, 147);
+        nodes[4] = new Node(4, 10, 8, 150);
     }
 
 

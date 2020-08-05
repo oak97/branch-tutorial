@@ -5,9 +5,10 @@ import search.strategy.Instance;
 import search.strategy.Node;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class Tree {
-    public LinkedList<Node> queue;
+    public Queue<Node> queue;
     public Instance inst;
 
     double best_x1;
@@ -23,7 +24,8 @@ public class Tree {
         Node node = inst.nodes[0];
         //队列
         queue = new LinkedList<Node>();
-        queue.add(node);
+        queue.offer(node);
+        System.out.println("入队：" + node.id);
     }
 
     public int[] solve() {
@@ -54,12 +56,14 @@ public class Tree {
             if (bc.branch(node)) {
                 System.out.println("分支：左右节点分别为 " + bc.left_node + "，" + bc.right_node);
                 branch_cnt++;
-                queue.add(bc.left_node);
-                queue.add(bc.right_node);
+                queue.offer(bc.left_node);
+                queue.offer(bc.right_node);
+                System.out.println("入队：" + bc.left_node.id);
+                System.out.println("入队：" + bc.right_node.id);
             } else {
                 System.out.println("无法分支");
             }
         }
-        return new int[]{branch_cnt,prune_cnt};
+        return new int[]{branch_cnt, prune_cnt};
     }
 }
