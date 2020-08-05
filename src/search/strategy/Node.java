@@ -24,8 +24,7 @@ public class Node implements Comparable {
     }
 
     public Node copy() {
-        Node new_node = new Node(this.id, this.x1, this.x2, this.z);
-        return new_node;
+        return new Node(this.id, this.x1, this.x2, this.z);
     }
 
     @Override
@@ -42,7 +41,7 @@ public class Node implements Comparable {
     @Override
     public int compareTo(Object o) {
         Node node = (Node) o;
-        if (z > node.z)
+        if (z < node.z)
             return -1;
         else if (z == node.z)
             return 0;
