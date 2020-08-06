@@ -42,10 +42,10 @@ public class Node implements Comparable {
     public int compareTo(Object o) {
         Node node = (Node) o;
         if (z < node.z)
-            return -1;
+            return 1;
         else if (z == node.z)
             return 0;
         else
-            return 1;
+            return -1;
     }
 }
