@@ -38,6 +38,7 @@ public class Node implements Comparable {
                 '}';
     }
 
+    //大的参数o优先
     @Override
     public int compareTo(Object o) {
         Node node = (Node) o;
